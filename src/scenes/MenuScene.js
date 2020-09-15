@@ -11,18 +11,16 @@ export class MenuScene extends Phaser.Scene{
     }
     create(){
 
+        this.game.music = this.game.sound.add('Music_Game');
         // var level = 1;
         // var iteration_level=1;
         this.add.text(125, 200, 'Start the game ?', { fontSize: '60px', fontStyle: 'Bold', fill: '#000000' });
         const StartButton = this.add.text(250, 350, 'Click me', { fontSize: '60px', fontStyle: 'Bold', fill: '#000000' });
         StartButton.setInteractive();
         StartButton.on('pointerdown', () => this.scene.start("GAME"));
-        
-        console.log('Music_Game');
-        this.game.music = this.game.sound.add('Music_Game');
-        this.game.music.muted = true;
-        this.game.music.muted = false;
-        this.game.music.play();
+        StartButton.on('pointerdown', () => this.game.music.play());
+  
 
     }
+    
 }
