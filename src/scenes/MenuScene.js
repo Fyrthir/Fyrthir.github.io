@@ -21,6 +21,7 @@ export class MenuScene extends Phaser.Scene{
         console.log('Music_Game');
         this.game.music = this.game.sound.add('Music_Game');
         this.game.music.muted = true;
+        this.game.music.muted = false;
         this.game.music.play();
 
     }
